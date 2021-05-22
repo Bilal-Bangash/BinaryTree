@@ -36,6 +36,14 @@ public class App {
         }
     }
 
+    public void preOrderTraverseTree(Node focusNode) {
+        if (focusNode != null) {
+            System.out.println(focusNode);
+            preOrderTraverseTree(focusNode.leftChild);
+            preOrderTraverseTree(focusNode.rightChild);
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         App theTree = new App();
@@ -47,6 +55,7 @@ public class App {
         theTree.addNode(85, "Salesman");
 
         theTree.inOrderTraverseTree(theTree.root);
+        theTree.preOrderTraverseTree(theTree.root);
     }
 }
 
